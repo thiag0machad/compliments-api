@@ -32,7 +32,7 @@ class Compliment {
   @Column()
   message: string;
 
-  @Column()
+  @CreateDateColumn()
   created_at: Date;
 
   constructor() {

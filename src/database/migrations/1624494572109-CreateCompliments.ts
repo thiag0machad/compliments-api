@@ -29,10 +29,6 @@ export class CreateCompliments1624494572109 implements MigrationInterface {
                         type: "varchar"
                     },
                     {
-                        name: "user_id",
-                        type: "varchar"
-                    },
-                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"

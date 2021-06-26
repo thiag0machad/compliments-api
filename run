@@ -1,3 +1,0 @@
-yarn run v1.22.10
-$ ts-node-dev ./node_modules/typeorm/cli.js migration
-[INFO] 20:49:54 ts-node-dev ver. 1.1.6 (using ts-node ver. 9.1.1, typescript ver. 4.3.4)
