@@ -28,8 +28,8 @@ class CreateComplimentService {
 
     const compliment = complimentsRepositories.create({
       tag_id,
-      user_receiver,
       user_sender,
+      user_receiver,
       message,
     })
 
