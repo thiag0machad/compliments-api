@@ -1,5 +1,5 @@
-import { Request, Response } from "express"
-import { AuthenticateUserService } from "../services/AuthenticateUserService"
+import { Request, Response } from "express";
+import { AuthenticateUserService } from "../services/AuthenticateUserService";
 
 class AuthenticateUserController {
   async handle(request: Request, response: Response) {
@@ -9,11 +9,11 @@ class AuthenticateUserController {
 
     const token = await authenticateUserService.execute({
       email,
-      password
-    })
+      password,
+    });
 
-    return response.json(token)
+    return response.json(token);
   }
 }
 
-export { AuthenticateUserController }
+export { AuthenticateUserController };

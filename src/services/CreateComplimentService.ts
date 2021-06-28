@@ -1,7 +1,6 @@
-import { getCustomRepository } from "typeorm"
-import { ComplimentsRepositories } from "../repositories/ComplimentsRepositories"
-import { UsersRepositories } from "../repositories/UserRepositories"
-
+import { getCustomRepository } from "typeorm";
+import { ComplimentsRepositories } from "../repositories/ComplimentsRepositories";
+import { UsersRepositories } from "../repositories/UserRepositories";
 
 interface IComplimentRequest {
   tag_id: string;
@@ -10,20 +9,26 @@ interface IComplimentRequest {
   message: string;
 }
 
-
 class CreateComplimentService {
-  async execute({tag_id, user_sender, user_receiver, message}: IComplimentRequest) {
-    const complimentsRepositories = getCustomRepository(ComplimentsRepositories)
-    const usersRepositories = getCustomRepository(UsersRepositories)
+  async execute({
+    tag_id,
+    user_sender,
+    user_receiver,
+    message,
+  }: IComplimentRequest) {
+    const complimentsRepositories = getCustomRepository(
+      ComplimentsRepositories
+    );
+    const usersRepositories = getCustomRepository(UsersRepositories);
 
-    if(user_sender === user_receiver) {
-      throw new Error("Incorrect User Receiver")
+    if (user_sender === user_receiver) {
+      throw new Error("Incorrect User Receiver");
     }
 
-    const userReceiverExists = await usersRepositories.findOne(user_receiver)
+    const userReceiverExists = await usersRepositories.findOne(user_receiver);
 
-    if(!userReceiverExists) {
-      throw new Error("User Receiver does not exists!")
+    if (!userReceiverExists) {
+      throw new Error("User Receiver does not exists!");
     }
 
     const compliment = complimentsRepositories.create({
@@ -31,7 +36,7 @@ class CreateComplimentService {
       user_sender,
       user_receiver,
       message,
-    })
+    });
 
     await complimentsRepositories.save(compliment);
 
@@ -39,4 +44,4 @@ class CreateComplimentService {
   }
 }
 
-export { CreateComplimentService }
+export { CreateComplimentService };
