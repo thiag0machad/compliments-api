@@ -30,7 +30,7 @@ Por fim, a aplicação estará disponível em `http://localhost:3000`
 
 ## 📄 Licença
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Esse projeto está sob a licença MIT.
 
 ---
 Feito com 💜 &nbsp;by Thiago Machado
